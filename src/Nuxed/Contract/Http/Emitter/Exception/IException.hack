@@ -1,7 +1,7 @@
 namespace Nuxed\Contract\Http\Emitter\Exception;
 
 /**
- * Marker interface for component exceptions.
+ * Every HTTP emitter related exception MUST implement this interface.
  */
 interface IException {
   require extends \Exception;
