@@ -1,0 +1,32 @@
+{
+    "name": "nuxed/contract",
+    "type": "library",
+    "description": "Nuxed Contract",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "azjezz",
+            "email": "azjezz@protonmail.com"
+        },
+        {
+            "name": "Nuxed Community",
+            "homepage": "https://github.com/nuxed/contract/graphs/contributors"
+        }
+    ],
+    "require": {
+        "hhvm": "^4.25",
+        "hhvm/hsl-experimental": "^4.31",
+        "hhvm/hsl": "^4.25"
+    },
+    "require-dev": {
+        "hhvm/hhast": "^4.25"
+    },
+    "scripts": {
+        "check": [
+            "@type-check",
+            "@lint"
+        ],
+        "lint": "hhast-lint -v src/",
+        "type-check": "hh_client src/"
+    }
+}
