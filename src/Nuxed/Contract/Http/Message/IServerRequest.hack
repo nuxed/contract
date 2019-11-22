@@ -108,8 +108,6 @@ interface IServerRequest extends IRequest {
    * This method MUST be implemented in such a way as to retain the
    * immutability of the message, and MUST return an instance that has the
    * updated body parameters.
-   *
-   * @throws Exception\IException if an invalid structure is provided.
    */
   public function withUploadedFiles(
     KeyedContainer<string, IUploadedFile> $uploadedFiles,
@@ -150,8 +148,6 @@ interface IServerRequest extends IRequest {
    * This method MUST be implemented in such a way as to retain the
    * immutability of the message, and MUST return an instance that has the
    * updated body parameters.
-   *
-   * @throws Exception\IException if an unsupported argument type is provided.
    */
   public function withParsedBody(
     ?KeyedContainer<string, string> $parsedBody,
