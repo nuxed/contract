@@ -57,7 +57,7 @@ interface IResponse extends IMessage<IO\SeekableReadWriteHandle> {
    * @link http://tools.ietf.org/html/rfc7231#section-6
    * @link http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
    */
-  public function getReasonPhrase(): string;
+  public function getReasonPhrase(): ?string;
 
   /**
    * Retrieve all cookies associated with the response.
