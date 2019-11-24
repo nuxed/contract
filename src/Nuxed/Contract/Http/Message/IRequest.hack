@@ -21,7 +21,7 @@ use namespace HH\Lib\Experimental\IO;
  * be implemented such that they retain the internal state of the current
  * message and return an instance that contains the changed state.
  */
-interface IRequest extends IMessage<IO\SeekableReadWriteHandle> {
+interface IRequest extends IMessage<IO\SeekableReadHandle> {
   /**
    * Retrieves the message's request target.
    *
