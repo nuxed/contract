@@ -32,4 +32,6 @@ interface ICookie {
   public function isHttpOnly(): bool;
 
   public function getSameSite(): ?CookieSameSite;
+
+  public function toString(): string;
 }
