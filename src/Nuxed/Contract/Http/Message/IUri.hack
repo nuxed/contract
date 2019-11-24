@@ -6,7 +6,21 @@ interface IUri {
 
   public function getAuthority(): string;
 
-  public function getUserInfo(): (string, ?string);
+  /**
+   * Retrieve the user information component of the URI.
+   *
+   * If no user information is present, this method MUST return null.
+   *
+   * If a user is present in the URI, this will return that value;
+   * additionally, if the password is also present, it will be appended to the
+   * user value, with a colon (":") separating the values.
+   *
+   * The trailing "@" character is not part of the user information and MUST
+   * NOT be added.
+   *
+   * @return string The URI user information, in "username[:password]" format.
+   */
+  public function getUserInfo(): ?string;
 
   public function getHost(): string;
 
