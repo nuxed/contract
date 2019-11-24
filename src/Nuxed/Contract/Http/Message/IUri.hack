@@ -24,7 +24,7 @@ interface IUri {
   /**
    * Retrieve the scheme component of the URI.
    *
-   * If no scheme is present, this method MUST return an empty string.
+   * If no scheme is present, this method MUST return an null.
    *
    * The value returned MUST be normalized to lowercase, per RFC 3986
    * Section 3.1.
@@ -34,15 +34,14 @@ interface IUri {
    *
    * @see https://tools.ietf.org/html/rfc3986#section-3.1
    *
-   * @return string The URI scheme.
+   * @return string The URI scheme; a null value indicates that the URI has no schema.
    */
-  public function getScheme(): string;
+  public function getScheme(): ?string;
 
   /**
    * Retrieve the authority component of the URI.
    *
-   * If no authority information is present, this method MUST return an empty
-   * string.
+   * If no authority information is present, this method MUST return null.
    *
    * The authority syntax of the URI is:
    *
@@ -55,9 +54,10 @@ interface IUri {
    *
    * @see https://tools.ietf.org/html/rfc3986#section-3.2
    *
-   * @return string The URI authority, in "[user-info@]host[:port]" format.
+   * @return null|string The URI authority, in "[user-info@]host[:port]" format; a null value
+   *     indicates that the URI has no authority information.
    */
-  public function getAuthority(): string;
+  public function getAuthority(): ?string;
 
   /**
    * Retrieve the user information component of the URI.
@@ -78,14 +78,14 @@ interface IUri {
   /**
    * Retrieve the host component of the URI.
    *
-   * If no host is present, this method MUST return an empty string.
+   * If no host is present, this method MUST return null.
    *
    * The value returned MUST be normalized to lowercase, per RFC 3986
    * Section 3.2.2.
    *
    * @see http://tools.ietf.org/html/rfc3986#section-3.2.2
    */
-  public function getHost(): string;
+  public function getHost(): ?string;
 
   /**
    * Retrieve the port component of the URI.
@@ -131,7 +131,7 @@ interface IUri {
   /**
    * Retrieve the query string of the URI.
    *
-   * If no query string is present, this method MUST return an empty string.
+   * If no query string is present, this method MUST return null.
    *
    * The leading "?" character is not part of the query and MUST NOT be
    * added.
@@ -147,12 +147,12 @@ interface IUri {
    * @see https://tools.ietf.org/html/rfc3986#section-2
    * @see https://tools.ietf.org/html/rfc3986#section-3.4
    */
-  public function getQuery(): string;
+  public function getQuery(): ?string;
 
   /**
    * Retrieve the fragment component of the URI.
    *
-   * If no fragment is present, this method MUST return an empty string.
+   * If no fragment is present, this method MUST return null.
    *
    * The leading "#" character is not part of the fragment and MUST NOT be
    * added.
@@ -164,7 +164,7 @@ interface IUri {
    * @see https://tools.ietf.org/html/rfc3986#section-2
    * @see https://tools.ietf.org/html/rfc3986#section-3.5
    */
-  public function getFragment(): string;
+  public function getFragment(): ?string;
 
   /**
    * Return an instance with the specified scheme.
@@ -175,13 +175,13 @@ interface IUri {
    * Implementations MUST support the schemes "http" and "https" case
    * insensitively, and MAY accommodate other schemes if required.
    *
-   * An empty scheme is equivalent to removing the scheme.
+   * A null value provided for the schema is equivalent to removing the scheme.
    *
    * @param string $scheme The scheme to use with the new instance.
    *
    * @throws Exception\IException for invalid or unsupported schemes.
    */
-  public function withScheme(string $scheme): this;
+  public function withScheme(?string $scheme): this;
 
   /**
    * Return an instance with the specified user information.
@@ -190,13 +190,13 @@ interface IUri {
    * an instance that contains the specified user information.
    *
    * Password is optional, but the user information MUST include the
-   * user; an empty string for the user is equivalent to removing user
+   * user; a null value provided for the user is equivalent to removing user
    * information.
    *
    * @param string $user The user name to use for authority.
    * @param null|string $password The password associated with $user.
    */
-  public function withUserInfo(string $user, ?string $password = null): this;
+  public function withUserInfo(?string $user, ?string $password = null): this;
 
   /**
    * Return an instance with the specified host.
@@ -204,13 +204,13 @@ interface IUri {
    * This method MUST retain the state of the current instance, and return
    * an instance that contains the specified host.
    *
-   * An empty host value is equivalent to removing the host.
+   * A null value provided for the host is equivalent to removing the host.
    *
    * @param string $host The hostname to use with the new instance.
    *
    * @throws Exception\IException for invalid hostnames.
    */
-  public function withHost(string $host): this;
+  public function withHost(?string $host): this;
 
   /**
    * Return an instance with the specified port.
@@ -264,13 +264,13 @@ interface IUri {
    * Users can provide both encoded and decoded query characters.
    * Implementations ensure the correct encoding as outlined in getQuery().
    *
-   * An empty query string value is equivalent to removing the query string.
+   * A null value provided for the query string is equivalent to removing the query string.
    *
    * @param string $query The query string to use with the new instance.
    *
    * @throws Exception\IException for invalid query strings.
    */
-  public function withQuery(string $query): this;
+  public function withQuery(?string $query): this;
 
   /**
    * Return an instance with the specified URI fragment.
@@ -281,11 +281,11 @@ interface IUri {
    * Users can provide both encoded and decoded fragment characters.
    * Implementations ensure the correct encoding as outlined in getFragment().
    *
-   * An empty fragment value is equivalent to removing the fragment.
+   * A null value provided for the fragment is equivalent to removing the fragment.
    *
    * @param string $fragment The fragment to use with the new instance.
    */
-  public function withFragment(string $fragment): this;
+  public function withFragment(?string $fragment): this;
 
   /**
    * Return the string representation as a URI reference.
