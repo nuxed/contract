@@ -247,7 +247,7 @@ interface IServerRequest extends IRequest {
   public function hasSession(): bool;
 
   /**
-   * Gets the body of the message.
+   * Gets the session instance associated with the request.
    *
    * @see hasSession()
    * @see withSession()
@@ -272,7 +272,7 @@ interface IServerRequest extends IRequest {
   public function hasFlash(): bool;
 
   /**
-   * Gets the body of the message.
+   * Gets the flash instance associated with the request.
    *
    * @see hasFlash()
    * @see withFlash()
