@@ -7,6 +7,8 @@ interface IUploadedFile {
 
   public function move(string $targetPath): Awaitable<void>;
 
+  public function getSize(): ?int;
+
   public function getError(): UploadedFileError;
 
   public function getClientFilename(): ?string;
