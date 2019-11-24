@@ -5,6 +5,7 @@ interface ICookie {
 
   public function withExpires(int $expires): this;
 
+  public function withMaxAge(int $maxage): this;
 
   public function withPath(?string $path): this;
 
@@ -23,6 +24,8 @@ interface ICookie {
   public function getValue(): string;
 
   public function getExpires(): int;
+
+  public function getMaxAge(): int;
 
   public function getPath(): ?string;
 
