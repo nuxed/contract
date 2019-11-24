@@ -3,7 +3,8 @@ namespace Nuxed\Contract\Http\Message;
 interface ICookie {
   public function withValue(string $value): this;
 
-  public function withExpires(?\DateTimeInterface $expires): this;
+  public function withExpires(int $expires): this;
+
 
   public function withPath(?string $path): this;
 
@@ -21,7 +22,7 @@ interface ICookie {
 
   public function getValue(): string;
 
-  public function getExpires(): ?\DateTimeInterface;
+  public function getExpires(): int;
 
   public function getPath(): ?string;
 
