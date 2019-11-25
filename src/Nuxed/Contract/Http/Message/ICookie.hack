@@ -27,49 +27,49 @@ interface ICookie {
   /**
    * Retrieve the expires attribute of the cookie.
    *
-   * If the attribute is present, this method MUST return null.
+   * If the attribute is not present, this method MUST return null.
    */
   public function getExpires(): ?int;
 
   /**
    * Retrieve the max-age attribute of the cookie.
    *
-   * If the attribute is present, this method MUST return null.
+   * If the attribute is not present, this method MUST return null.
    */
   public function getMaxAge(): ?int;
 
   /**
    * Retrieve the path attribute of the cookie.
    *
-   * If the attribute is present, this method MUST return null.
+   * If the attribute is not present, this method MUST return null.
    */
   public function getPath(): ?string;
 
   /**
    * Retrieve the domain attribute of the cookie.
    *
-   * If the attribute is present, this method MUST return null.
+   * If the attribute is not present, this method MUST return null.
    */
   public function getDomain(): ?string;
 
   /**
    * Retrieve the secure attribute of the cookie.
    *
-   * If the attribute is present, this method MUST return null.
+   * If the attribute is not present, this method MUST return null.
    */
   public function getSecure(): ?bool;
 
   /**
    * Retrieve the http-only attribute of the cookie.
    *
-   * If the attribute is present, this method MUST return null.
+   * If the attribute is not present, this method MUST return null.
    */
   public function getHttpOnly(): ?bool;
 
   /**
    * Retrieve the same-site attribute of the cookie.
    *
-   * If the attribute is present, this method MUST return null.
+   * If the attribute is not present, this method MUST return null.
    */
   public function getSameSite(): ?CookieSameSite;
 
