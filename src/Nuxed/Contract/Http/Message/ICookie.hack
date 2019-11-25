@@ -152,14 +152,4 @@ interface ICookie {
    * an instance that does not contain the `http-only` attribute.
    */
   public function withoutHttpOnly(): this;
-
-  /**
-   * Return the string representation as a the cookie reference.
-   *
-   * The value returned MUST be encoded, per RFC 6265 Section 4.1.1.
-   *
-   * @see https://tools.ietf.org/html/rfc6265#section-5.2
-   * @see https://tools.ietf.org/html/rfc6265#section-4.1.1
-   */
-  public function toString(): string;
 }
