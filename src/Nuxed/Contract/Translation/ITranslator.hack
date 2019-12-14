@@ -26,5 +26,5 @@ interface ITranslator {
     KeyedContainer<string, mixed> $parameters = dict[],
     ?string $domain = null,
     ?string $locale = null,
-  ): string;
+  ): Awaitable<string>;
 }
