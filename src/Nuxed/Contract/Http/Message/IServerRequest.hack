@@ -1,6 +1,6 @@
 namespace Nuxed\Contract\Http\Message;
 
-use namespace Nuxed\Contract\Http\{Flash, Server, Session};
+use namespace Nuxed\Contract\Http\{Flash, Session};
 
 /**
  * Representation of an incoming, server-side HTTP request.
@@ -208,21 +208,6 @@ interface IServerRequest extends IRequest {
    * @see getAttributes()
    */
   public function withoutAttribute(string $attribute): this;
-
-  /**
-   * Return the http principal, which represent a user authenticated by HTTP Basic or
-   * Digest authentication. A null value indicates the absence of a user authentication.
-   */
-  public function getPrincipal(): ?Server\IHttpPrincipal;
-
-  /**
-   * Return an instance with the specified http principal implementation.
-   *
-   * This method MUST be implemented in such a way as to retain the
-   * immutability of the message, and MUST return an instance that has the
-   * http principal instance.
-   */
-  public function withPrincipal(Server\IHttpPrincipal $principal): this;
 
   /**
    * Return an instance with the specified session implementation.
