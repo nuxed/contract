@@ -24,7 +24,7 @@ interface IUploadedFile {
    * @throws Exception\IException in cases when no stream is available or can be
    *     created.
    */
-  public function getHandle(): File\ReadHandle;
+  public function getHandle(): File\CloseableReadHandle;
 
   /**
    * Move the uploaded file to a new location.

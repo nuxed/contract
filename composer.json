@@ -15,7 +15,7 @@
     ],
     "require": {
         "hhvm": "^4.25",
-        "hhvm/hsl-experimental": "^4.31",
+        "hhvm/hsl-experimental": "^4.37",
         "hhvm/hsl": "^4.25"
     },
     "require-dev": {
