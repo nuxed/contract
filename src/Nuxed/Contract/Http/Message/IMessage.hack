@@ -1,6 +1,6 @@
 namespace Nuxed\Contract\Http\Message;
 
-use namespace HH\Lib\Experimental\IO;
+use namespace HH\Lib\IO;
 
 /**
  * HTTP messages consist of requests from a client to a server and responses

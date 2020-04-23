@@ -1,6 +1,6 @@
 namespace Nuxed\Contract\Http\Message;
 
-use namespace HH\Lib\Experimental\IO;
+use namespace HH\Lib\IO;
 
 /**
  * Representation of an outgoing, client-side request.

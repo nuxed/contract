@@ -1,6 +1,6 @@
 namespace Nuxed\Contract\Http\Message;
 
-use namespace HH\Lib\Experimental\File;
+use namespace HH\Lib\File;
 
 /**
  * Value object representing a file uploaded through an HTTP request.
