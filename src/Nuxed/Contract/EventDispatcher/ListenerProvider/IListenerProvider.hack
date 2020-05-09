@@ -1,6 +1,6 @@
-namespace Nuxed\EventDispatcher\ListenerProvider;
+namespace Nuxed\Contract\EventDispatcher\ListenerProvider;
 
-use namespace Nuxed\EventDispatcher\{Event, EventListener};
+use namespace Nuxed\Contract\EventDispatcher\{Event, EventListener};
 
 /**
  * Mapper from an event to the listeners that are applicable to that event.

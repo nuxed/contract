@@ -1,4 +1,4 @@
-namespace Nuxed\EventDispatcher;
+namespace Nuxed\Contract\EventDispatcher;
 
 /**
  * Defines a dispatcher for events.

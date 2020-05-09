@@ -1,6 +1,6 @@
-namespace Nuxed\EventDispatcher\EventListener;
+namespace Nuxed\Contract\EventDispatcher\EventListener;
 
-use namespace Nuxed\EventDispatcher\Event;
+use namespace Nuxed\Contract\EventDispatcher\Event;
 
 /**
  * Defines a listener for an event.

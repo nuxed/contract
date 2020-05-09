@@ -1,4 +1,4 @@
-namespace Nuxed\EventDispatcher\Event;
+namespace Nuxed\Contract\EventDispatcher\Event;
 
 /**
  * An Event whose processing may be interrupted when the event has been handled.

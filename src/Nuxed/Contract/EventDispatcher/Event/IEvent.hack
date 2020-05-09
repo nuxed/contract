@@ -1,4 +1,4 @@
-namespace Nuxed\EventDispatcher\Event;
+namespace Nuxed\Contract\EventDispatcher\Event;
 
 /**
  * Marker interface indicating an event instance.
