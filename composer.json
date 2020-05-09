@@ -14,12 +14,12 @@
         }
     ],
     "require": {
-        "hhvm": "^4.50",
-        "hhvm/hsl-experimental": "^4.50",
-        "hhvm/hsl": "^4.25"
+        "hhvm": "^4.56",
+        "hhvm/hsl-experimental": "^4.52",
+        "hhvm/hsl": "^4.41"
     },
     "require-dev": {
-        "hhvm/hhast": "^4.25"
+        "hhvm/hhast": "^4.50"
     },
     "scripts": {
         "check": [
