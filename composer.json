@@ -14,12 +14,16 @@
         }
     ],
     "require": {
-        "hhvm": "^4.56",
-        "hhvm/hsl-experimental": "^4.52",
-        "hhvm/hsl": "^4.41"
+        "hhvm": "^4.83",
+        "hhvm/hsl": "^4.41",
+        "hhvm/hsl-experimental": "^4.66"
     },
     "require-dev": {
-        "hhvm/hhast": "^4.50"
+        "facebook/difflib": "^1.1.1",
+        "facebook/hh-clilib": "^2.5.2",
+        "hhvm/hhast": "^4.82.2",
+        "hhvm/hhvm-autoload": "^3.1.6",
+        "hhvm/type-assert": "^4.1.2"
     },
     "scripts": {
         "check": [
