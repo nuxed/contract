@@ -11,11 +11,12 @@ interface IListenerProvider {
    *
    * @param T $event
    *   An event for which to return the relevant listeners.
+   *
    * @return AsyncIterator<EventListener\IEventListener<T>>
    *   An async iterator (usually an async generator) of listeners. Each
    *   listener MUST be type-compatible with $event.
    */
-  public function getListeners<T as Event\IEvent>(
+  public function getListeners<<<__Enforceable>> reify T as Event\IEvent>(
     T $event,
   ): AsyncIterator<EventListener\IEventListener<T>>;
 }
