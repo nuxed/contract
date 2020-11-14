@@ -1,10 +1,13 @@
 <p align="center"><img src="https://avatars3.githubusercontent.com/u/45311177?s=200&v=4"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/nuxed/contract"><img src="https://travis-ci.org/nuxed/contract.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/nuxed/contract"><img src="https://poser.pugx.org/nuxed/contract/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/nuxed/contract"><img src="https://poser.pugx.org/nuxed/contract/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/nuxed/contract"><img src="https://poser.pugx.org/nuxed/contract/license.svg" alt="License"></a>
+
+![Coding standards status](https://github.com/nuxed/contract/workflows/coding%20standards/badge.svg?branch=develop)
+![Coding standards status](https://github.com/nuxed/contract/workflows/static%20analysis/badge.svg?branch=develop)
+[![Total Downloads](https://poser.pugx.org/nuxed/contract/d/total.svg)](https://packagist.org/packages/nuxed/contract)
+[![Latest Stable Version](https://poser.pugx.org/nuxed/contract/v/stable.svg)](https://packagist.org/packages/nuxed/contract)
+[![License](https://poser.pugx.org/nuxed/contract/license.svg)](https://packagist.org/packages/nuxed/contract)
+
 </p>
 
 # Nuxed Contract
