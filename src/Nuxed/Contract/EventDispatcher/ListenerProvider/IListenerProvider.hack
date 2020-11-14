@@ -7,16 +7,12 @@ use namespace Nuxed\Contract\EventDispatcher\{Event, EventListener};
  */
 interface IListenerProvider {
   /**
-   * Retrieve all listeners for the given event.
-   *
-   * @param T $event
-   *   An event for which to return the relevant listeners.
+   * Retrieve all listeners for the given event type.
    *
    * @return AsyncIterator<EventListener\IEventListener<T>>
-   *   An async iterator (usually an async generator) of listeners. Each
-   *   listener MUST be type-compatible with $event.
+   *   An async iterator (usually an async generator) of listeners.
+   *   Each listener MUST be type-compatible with T.
    */
   public function getListeners<<<__Enforceable>> reify T as Event\IEvent>(
-    T $event,
   ): AsyncIterator<EventListener\IEventListener<T>>;
 }
