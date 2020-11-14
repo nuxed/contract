@@ -7,7 +7,7 @@ use namespace Nuxed\Contract\EventDispatcher\Event;
  */
 interface IEventListener<T as Event\IEvent> {
   /**
-   * Process the given event.
+   * Process the given event, and return it.
    */
-  public function process(T $event): Awaitable<void>;
+  public function process(T $event): Awaitable<T>;
 }

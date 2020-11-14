@@ -11,5 +11,7 @@ interface IEventDispatcher {
    *
    * @return T The Event that was passed, now modified by listeners.
    */
-  public function dispatch<T as Event\IEvent>(T $event): Awaitable<T>;
+  public function dispatch<<<__Enforceable>> reify T as Event\IEvent>(
+    T $event,
+  ): Awaitable<T>;
 }
