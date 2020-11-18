@@ -23,7 +23,6 @@ jobs:
           - { hhvm: 'nightly', os: 'ubuntu-latest', experimental: true , dependencies: 'lowest'  }
           - { hhvm: 'nightly', os: 'ubuntu-latest', experimental: true , dependencies: 'highest' }
 
-
     steps:
       - name: "checkout"
         uses: "actions/checkout@v2"
