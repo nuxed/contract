@@ -10,18 +10,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:           ['macos-latest', 'ubuntu-latest']
-        hhvm:         ['4.83', '4.84']
+        os: ['macos-latest', 'ubuntu-latest']
+        hhvm: ['4.83', '4.84']
         dependencies: ['lowest', 'highest', 'locked']
         experimental: [false]
 
         include:
-          - { hhvm: 'stable',  os: 'ubuntu-latest', experimental: false, dependencies: 'lowest'  }
-          - { hhvm: 'stable',  os: 'ubuntu-latest', experimental: false, dependencies: 'locked'  }
-          - { hhvm: 'stable',  os: 'ubuntu-latest', experimental: false, dependencies: 'highest' }
-
-          - { hhvm: 'nightly', os: 'ubuntu-latest', experimental: true , dependencies: 'lowest'  }
-          - { hhvm: 'nightly', os: 'ubuntu-latest', experimental: true , dependencies: 'highest' }
+          - { hhvm: 'nightly', os: 'ubuntu-latest', dependencies: 'lowest' , composer-options: '--ignore-platform-req hhvm', experimental: true }
+          - { hhvm: 'nightly', os: 'ubuntu-latest', dependencies: 'highest', composer-options: '--ignore-platform-req hhvm', experimental: true }
 
     steps:
       - name: "checkout"
@@ -32,13 +28,11 @@ jobs:
         with:
           version: ${{ matrix.hhvm }}
 
-      - name: "installing lowest dependencies"
-        if: ${{ matrix.dependencies == 'lowest' }}
-        run: "composer update --prefer-lowest --no-interaction --no-progress"
-
-      - name: "installing highest dependencies"
-        if: ${{ matrix.dependencies == 'highest' }}
-        run: "composer update --no-interaction --no-progress"
+      - name: "installing dependencies"
+        uses: "ramsey/composer-install@v1"
+        with:
+          dependency-versions: ${{ matrix.dependencies }}
+          composer-options: "${{ matrix.composer-options }}"
 
       - name: "static analysis"
         continue-on-error: ${{ matrix.experimental }}
